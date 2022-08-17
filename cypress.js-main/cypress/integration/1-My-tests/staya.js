@@ -1,0 +1,13 @@
+
+describe('Тестирование формы логина и пароля сайта staya.dog с верным паролем', function () {
+    
+    it('Открываю главную страницу сайта staya.dog', function () {
+        cy.visit('https://staya.dog/');
+        cy.get('.header-bottom__right--link').click();
+        cy.get('.auth-form > form > [type="email"]').type('disopyaa@gmail.ru');
+        cy.get('.auth-form > form > [type="password"]').type('666666');
+        cy.get('.auth-form__submit').click();
+        cy.contains('Мои заказы');
+
+         })
+})
